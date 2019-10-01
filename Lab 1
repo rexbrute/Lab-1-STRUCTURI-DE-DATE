@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Student{
+char nume[30];
+float nota[30];
+}p;
+
+int main()
+{int n;
+int i,s,t,a;
+int k;
+int j;
+ printf("Introduceti n:");
+ scanf("%d",&n);
+ for(int i=1;i<=n;i++){
+       printf("Introduceti nume:");
+   scanf("%s",&p.nume[i]);
+    printf("Introduceti nota:");
+   scanf("%f",&p.nota[i]);}
+
+printf("\n\nDUPA MEDIE");
+ for(k=1;k<=n;k++)
+{
+    for(j=k+1;j<=n;j++)
+    {
+        if(p.nota[k]<p.nota[j])
+        {
+        s=p.nume[k];
+        p.nume[k]=p.nume[j];
+        p.nume[j]=s;
+         a=p.nota[k];
+        p.nota[k]=p.nota[j];
+        p.nota[j]=a;
+        }
+    }
+}
+for(k=1,i=0;k<=n;i++,k++){
+printf("\n#%2d---%c %.0f",i,p.nume[k], p.nota[k]);
+}
+ return 0;
+}
